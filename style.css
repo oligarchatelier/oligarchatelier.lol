@@ -127,12 +127,20 @@ body:hover .cursor-outline {
 /* Links */
 .links {
     display: flex;
-    flex-direction: row;
-    /* Horizontal layout */
+    flex-direction: column;
+    /* Vertical layout for stake link + row */
     width: 100%;
     gap: 1.5rem;
     margin: auto;
     /* Push banner and footer to bottom */
+}
+
+.links-row {
+    display: flex;
+    flex-direction: row;
+    /* Horizontal layout for medium and x */
+    width: 100%;
+    gap: 1.5rem;
 }
 
 .link-item {
@@ -208,6 +216,16 @@ body:hover .cursor-outline {
     /* Maintain center */
 }
 
+/* Stake link specific styling */
+.link-item-stake {
+    border-color: #3f3;
+    color: #3f3;
+}
+
+.link-item-stake::before {
+    background-color: #3f3;
+}
+
 /* Footer */
 .footer {
     /* pinned to bottom via flex layout of container */
@@ -240,5 +258,13 @@ body:hover .cursor-outline {
     /* Stack links on mobile */
     .links {
         flex-direction: column;
+    }
+
+    .links-row {
+        flex-direction: column;
+    }
+
+    .links-row .link-item {
+        font-size: 1.05rem;
     }
 }
